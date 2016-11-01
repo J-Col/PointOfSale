@@ -12,11 +12,11 @@ function addItem()
   {
   newItem = Number(newItem);
   runningTotal += newItem;
-var dollars
-dollars = asCurrency(runningTotal)
-document.getElementById("subtotal").innerHTML = dollars;
-document.getElementById("price").value = "";
-setCookie("preTax", runningTotal, 1);
+  var dollars
+  dollars = asCurrency(runningTotal)
+  document.getElementById("subtotal").innerHTML = dollars;
+  document.getElementById("price").value = "";
+  setCookie("preTax", runningTotal, 1);
   }
 }
 
