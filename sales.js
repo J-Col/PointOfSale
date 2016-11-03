@@ -48,3 +48,15 @@ function getCookie(cname) {
     }
     return "";
 }
+function calculateReceipt()
+{
+    var receiptSubtotal = Number(getCookie(preTax));
+    var receiptTax = receiptSubtotal * 0.075;
+    var receiptTotal = receiptSubtotal + receiptTax;
+    var subFixed = "$" + receiptSubtotal.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    var taxFixed = "$" + receiptTax.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    var totFixed = "$" + receiptTotal.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    document.getElementById("sub").innerHTML = subFixed;
+    document.getElementById("tax").innerHTML = taxFixed;
+    document.getElementById("tot").innerHTML = totFixed;
+}
